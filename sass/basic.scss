@@ -1,0 +1,357 @@
+$primary-color:#3C76B9;
+$secondary-color:#F5A623;
+$gradient-color: linear-gradient(to right, #3023AE 0%, #B4EC51 100%);
+
+@font-face {
+        font-family: "Avenir Bold";
+        src: url("../fonts/avenirnext-bold.woff") format("woff");
+}
+@font-face {
+        font-family: "Avenir Medium";
+        src: url("../fonts/avenirnext-medium.woff") format("woff");
+}
+@font-face {
+        font-family: "Avenir Regular";
+        src: url("../fonts/avenirnext-regular.woff") format("woff");
+}
+@font-face {
+        font-family: "Georgia Bold";
+        src: url("../fonts/georgia-bold.woff") format("woff");
+}
+@font-face {
+        font-family: "Georgia Regular";
+        src: url("../fonts/georgia-regular.woff") format("woff");
+}
+
+@font-face {
+        font-family: "Montserrat Semibold";
+        src: url("../fonts/montserrat-semibold.woff") format("woff");
+}
+
+$heading-text: 'Avenir Bold', sans-serif;
+$body-text: 'Avenir Regular', sans-serif;
+$btn-text: 'Montserrat Semibold', sans-serif;
+$description-text: 'Georgia Bold', serif;
+.secondary-color{
+    color: $secondary-color;
+}
+
+@mixin transform($property){
+    -webkit-transform:$property;
+    -ms-transform:$property;
+    transform:$property;
+}
+.btn{
+    background: $secondary-color;
+    padding: 6px 40px;
+    font-family: $btn-text;
+    font-size:3vh;
+}
+.quiz-btn{
+    width: 100%;
+    padding: 10px 40px;
+
+}
+.quiz-btn:hover{
+    background:black;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    background: $primary-color;
+    color: white;
+}
+h1{
+    font-family: $heading-text;
+}
+
+.mt2vh{
+    margin-top: 2vh
+}
+.mt5vh{
+    margin-top: 5vh
+}
+.mt10vh{
+    margin-top: 10vh
+}
+.mt15vh{
+    margin-top: 15vh
+}
+
+.col-md-4{
+    margin-top: 10px;
+    margin-bottom:10px
+}
+.col-md-6{
+    margin-top: 10px;
+    margin-bottom:10px
+}
+
+.img-div{
+    margin: 0 24%;
+    margin-top: 20vh;
+}
+
+.select-img-logo{
+    width: 180px
+}
+.card{
+    border: none;
+}
+.card-img-top{
+    border: 11px solid $secondary-color;
+}
+.card-body{
+    background: $primary-color;
+}
+.subject-card-body{
+    background: $secondary-color;
+}
+.bottom-bar{
+    position: absolute;
+    bottom: 0px;
+        
+}
+
+a{
+    color: white;
+}
+a h2{
+    color: white;
+}
+.large-text{
+    font-size: 10vh;
+}
+.text-black{
+    color: $primary-color;
+}
+hr{
+    background: white;
+    border: 5px solid white;
+}
+.border-bottom{
+    border-bottom: 1px solid white;
+}
+.border-right{
+    border-right: 1px solid white;
+}
+.main{
+    background: $primary-color;
+    width:90%;
+    float: right;
+    color:white;
+    height: 100vh;    
+    .main-content > a h1{
+        font-size: 12vh; 
+        line-height: 1.3;
+    }
+}
+.main-content{
+    margin: 12vh;
+    
+    :nth-child(1) h1{
+        padding-left: 0px;
+    }
+    :nth-child(2) h1{
+        padding-left: 40px;
+    }
+    :nth-child(3) h1{
+        padding-left: 80px;            
+    }
+}
+.tab-bar{
+    display: none;
+}
+
+.sidebar{
+    position: fixed;
+    float: left;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    
+    
+    > a h1 {
+        @include transform(rotate(-90deg));
+        text-align: center;
+        background: $primary-color;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    > a:hover h1 {
+        @include transform(rotate(-90deg));
+        text-align: center;
+        background: $gradient-color;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+    > a p{
+        text-align: center;
+        justify-content: flex-start;
+        margin-right: auto;
+    }
+}
+
+nav{
+    padding: 28px 19px;
+    display: flex;
+}
+.contact{
+    margin-left: auto;
+}
+.options-r{
+    text-align: right;
+}
+.options-l{
+    text-align: left;
+}
+
+@media only screen and (max-width: 787px) {
+    .options-r{
+    text-align: center;
+}
+.options-l{
+    text-align: center;
+}
+}
+@media only screen and (max-width: 450px) {
+    .sidebar{
+        display: none;
+    }
+    .main{
+        width:100%;
+        background: white;
+         .main-content > a h1{
+             background: $gradient-color;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 6vh;
+         }
+        
+    }
+    .tab-bar{
+        display: flex;
+        background: $primary-color;
+        position: fixed;
+        bottom: 0;
+        height:63;
+        left: 0;
+        right: 0;
+        justify-content: space-around;
+        align-content: center;
+         margin: auto;
+        
+        a{
+            margin: auto;
+        }
+        
+        h1{
+            margin: auto;
+            font-size:26;
+            flex:1;    
+        }
+    }
+    
+    .main-content{
+    margin: auto 20px;
+    
+    :nth-child(1) h1{
+        padding-left: 0px;
+    }
+    :nth-child(2) h1{
+        padding-left: 0px;
+    }
+    :nth-child(3) h1{
+        padding-left: 0px;            
+    }
+}
+
+}
+
+//ANIMATIONS
+
+
+.grow:hover{
+transform: scale(1.5); 
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-1-12 10:0:2
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+
+.scale-up-center {
+	-webkit-animation: scale-up-center 0.8s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+	        animation: scale-up-center 0.8s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-1-12 10:30:4
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+.text-focus-in {
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 0.5s both;
+}
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
